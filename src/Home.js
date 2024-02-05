@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
-import data from './data'
+import detail from './data'
 import './Home.css'
 import logo from './assets/icons/cook_logo.png'
 import chief from './assets/icons/chief_image.png'
 import chinies from './assets/icons/chinies.png'
 import { Link } from 'react-router-dom'
 const Home = () => {
+  const data=detail.data
     const [checker,setChecker]=useState({})
   return (
     <div id='home_page'>

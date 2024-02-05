@@ -10,7 +10,8 @@ body{
     z-index: 3;
     border-bottom: 2px solid black;
     background-color: #fae68e;
-
+    position: fixed;
+    width: 100%;
 }
 h1{
     flex: 3;
