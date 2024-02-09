@@ -66,6 +66,17 @@ const Home = () => {
   </div>
   <img src={chief} alt='chief'/>
 </div>
+<div style={{width:'100%',backgroundColor:'white'}}>
+<div style={{display:'flex',flexDirection:'row',justifyContent:'space-evenly',alignItems:'center',height:60}}>
+<img style={{height:30,width:30}} src='https://cdn-icons-png.flaticon.com/128/814/814587.png' alt='world' />
+<Link id='Footer_link' to='https://github.com/sivaprasath2004'>support</Link>
+<Link id='Footer_link' to='/about'>About</Link>
+<Link id='Footer_link' to='/contact'>Contact</Link>
+<Link id='Footer_link' to='/book'>Book</Link>
+<Link id='Footer_link' to='/admin'>Admin</Link> 
+<h6>@copyright <Link to='https://github.com/sivaprasath2004'>Sivaprasath2004</Link></h6>
+</div>
+</div>
     </div>
   )
 }

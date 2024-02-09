@@ -176,3 +176,8 @@
 #custome_support div span{
   color: #ff0000;
 }
+#Footer_link{
+  font-size: 15px;
+  text-decoration: none;
+  color: #111;
+}

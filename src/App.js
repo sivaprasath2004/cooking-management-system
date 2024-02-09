@@ -4,6 +4,7 @@ import Home from './Home'
 import About from './About'
 import Contact from './Contact'
 import Booknow from './Booknow'
+import Admin from './Admin'
 import logo from './assets/icons/cook_logo.png'
 import { Link, Routes,Route } from 'react-router-dom'
 const App = () => {
@@ -54,6 +55,7 @@ const App = () => {
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
       <Route path='/book' element={<Booknow />} />
+      <Route path='/admin' element={<Admin/>}/>
     </Routes>
     </>
 }

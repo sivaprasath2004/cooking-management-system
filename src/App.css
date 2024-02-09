@@ -26,11 +26,13 @@ nav{
     padding-right: 10px;
 }
 nav a{
+  font-size: .95rem;
   text-decoration: none;
   font-weight: 600;
   color: #ff7300;
 }
 h1{
+  font-size: 1.5rem;
 animation:tracking-in-expand .7s cubic-bezier(.215,.61,.355,1.000) both;  
 
 }
