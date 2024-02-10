@@ -4,7 +4,7 @@ const Orders = ({data}) => {
     const [datas,setData]=useState({})
     useEffect(()=>{
      async function fetch(){
-        let result=await axios.post('http://localhost:5000/book',{
+        let result=await axios.post('https://cooking-management-system-backend.vercel.app/book',{
             id:data
         })
         if(result.data?.length===0){

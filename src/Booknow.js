@@ -13,7 +13,7 @@ const Booknow = () => {
         if(detail.MobileNumber.length===10){
       if(
         detail.name.length>=3 && detail.MobileNumber.length===10 && detail.FunctionName.length>=3 && detail.Members.length>=1 && detail.Address.length>=4){
-      let res=await axios.post('http://localhost:5000/details',{
+      let res=await axios.post('https://cooking-management-system-backend.vercel.app/details',{
         detail:detail
       })
     }
