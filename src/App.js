@@ -19,7 +19,7 @@ const App = () => {
   return (
     <>
     {
-      !isVisible?
+      isVisible?
       <>
       <div transition-style="in:wipe:bottom-right" style={{display:'flex',height:'100vh',backgroundColor:'black',justifyContent:'center',alignItems:'center'}}>
       <div>
