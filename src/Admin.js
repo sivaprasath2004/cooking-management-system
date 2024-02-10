@@ -9,7 +9,7 @@ const Admin = () => {
     if(checker.UserName!==undefined && checker.Password!==undefined){
       console.log('Hello')
     if(checker.UserName.length>1 && checker.Password.length>1){
-     let res=await axios.post("http://localhost:5000/admin",{
+     let res=await axios.post("https://cooking-management-system-backend.vercel.app/admin",{
         UserName:checker.UserName,
         Password:checker.Password
       })

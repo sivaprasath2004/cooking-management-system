@@ -2,6 +2,33 @@
     font-size: 1.6rem;
     color: black;
 }
+#orderPage_buttons{
+  border: 0;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, .3) 0 5px 15px;
+  box-sizing: border-box;
+  color: black;
+  cursor: pointer;
+  font-family: Montserrat,sans-serif; 
+  font-size: 1em;
+  font-weight: 500;
+  margin: 5px;
+  padding: 6px 25px;
+  text-align: center;
+  user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-user-select: none;
+  border-radius: 20px;
+  touch-action: manipulation;
+}
+.button_mark{
+  background-image: linear-gradient(#e2e9e7, #a9b0b8);
+}
+.button_Delete{
+  background-image: linear-gradient(#ff9b05, #ea140d);  
+}
 .sign_in_button {
     appearance: none;
     background-color:black;

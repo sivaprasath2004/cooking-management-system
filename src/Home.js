@@ -6,7 +6,7 @@ import chief from './assets/icons/chief_image.png'
 import chinies from './assets/icons/chinies.png'
 import { Link } from 'react-router-dom'
 const Home = () => {
-  const data=detail.data
+  const data=detail
     const [checker,setChecker]=useState({})
   return (
     <div id='home_page'>
