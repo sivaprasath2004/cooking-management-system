@@ -6,8 +6,9 @@ import Contact from './Contact'
 import Booknow from './Booknow'
 import Admin from './Admin'
 import logo from './assets/icons/cook_logo.png'
-import { Link, Routes,Route } from 'react-router-dom'
+import { Link, Routes,Route, useNavigation } from 'react-router-dom'
 const App = () => {
+  const navigate=useNavigation()
   const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
@@ -16,10 +17,13 @@ const App = () => {
       }, 3000);
       return () => clearTimeout(timerId);
     }, []); 
+  if(isVisible){
+    navigate('/')
+  }
   return (
     <>
     {
-      isVisible?
+      !isVisible?
       <>
       <div transition-style="in:wipe:bottom-right" style={{display:'flex',height:'100vh',backgroundColor:'black',justifyContent:'center',alignItems:'center'}}>
       <div>
