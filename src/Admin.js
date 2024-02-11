@@ -7,7 +7,6 @@ const Admin = () => {
   const [checker,setChecker]=useState({show:false})
   async function sign_in_check(){
     if(checker.UserName!==undefined && checker.Password!==undefined){
-      console.log('Hello')
     if(checker.UserName.length>1 && checker.Password.length>1){
      let res=await axios.post("https://cooking-management-system-backend.vercel.app/admin",{
         UserName:checker.UserName,
@@ -26,11 +25,11 @@ const Admin = () => {
     }
   }
   return (
-    <div style={{display:'flex',height:'100vh',justifyContent:'center',alignItems:'center'}}>
+    <div style={{display:'flex',height:'100vh',justifyContent:'center',alignItems:'center',paddingTop:70}}>
       {
         checker.id===undefined?
-        <div style={{display:'flex',flexDirection:'row',backgroundColor:'white',width:'50%',height:'70%',borderRadius:20,marginTop:'7rem'}}>
-      <div style={{width:'50%'}}>
+        <div style={{display:'flex',flexWrap:'wrap',flexDirection:'row',backgroundColor:'white',minWidth:350,maxWidth:430,height:400,borderRadius:20,boxShadow:'0 12px 12px 40rem rgba(0,0,0,.9)'}}>
+      <div style={{width:'100%',flex:'1 0 10rem'}}>
         <div id='header'>
         <h1 id='login_account_header'>Login</h1>
         </div>
@@ -61,7 +60,6 @@ const Admin = () => {
         </div>
         </div>
       </div>
-        <img src={logo} style={{width:'50%',boxShadow:' rgba(17, 12, 46, 0.15) 0px 48px 100px 0px',objectFit:'contain',backgroundColor:'#121212',borderRadius:20}} alt='logo'/>
       </div>:
       <Orders data={checker.id} />
       }

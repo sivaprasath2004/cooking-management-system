@@ -2,6 +2,7 @@ body{
     margin: 0;
     padding: 0;
     background-color: #fae68e;
+    overflow-x: hidden;
 }
 .nav{
     display: flex;

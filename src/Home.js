@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import detail from './data'
+import detail from './assets/data'
 import './Home.css'
 import logo from './assets/icons/cook_logo.png'
 import chief from './assets/icons/chief_image.png'
@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <div id='home_page'>
       <div id='Heading'>
-        <div>
+        <div id='first_child'>
       <h1 id='head'>
         Enjoy <span>Delicious</span> <span>Food</span> in your Health Life
       </h1>
@@ -20,7 +20,7 @@ const Home = () => {
       </p>
 <Link to='/book' className="button-85" role="button">Book now</Link>
 </div>
-<div>
+<div id='second_child'>
         <img src={logo} alt='chief_logo' />
      
       </div>
@@ -43,10 +43,10 @@ const Home = () => {
 </div>
 
       </div>
+      <h4>Why People Choose Us?</h4>
       <div id='people_choose'>
   <img src={chinies} alt='china food' />
   <div>
-    <h4>Why People Choose Us?</h4>
     <div>
 
     <p id='head'>Deliciously Diverse Menu</p>
@@ -58,23 +58,29 @@ const Home = () => {
     </div>
   </div>
 </div>
+<div className='custome_support'>
+<h5>Customer <span>Feedback</span></h5>
+</div>
 <div id='custome_support'>
   <div>
-    <h5>Customer <span>Feedback</span></h5>
   <p>At Cooking Order and Cook Management, your satisfaction is our priority. We welcome your feedback on user-friendliness, order accuracy, and delivery timeliness to enhance your experience. Share your thoughts on menu diversity and cuisine preferences, helping us tailor our offerings to match your tastes. Your insights on customization, ingredient quality, and freshness guide us in providing a personalized and enjoyable cooking journey. Additionally, feedback on communication, support, technical performance, and sustainability practices is invaluable for continuous improvement and ensuring your experience is exceptional.
   </p>
   </div>
   <img src={chief} alt='chief'/>
 </div>
 <div style={{width:'100%',backgroundColor:'white'}}>
-<div style={{display:'flex',flexDirection:'row',justifyContent:'space-evenly',alignItems:'center',height:60}}>
-<img style={{height:30,width:30}} src='https://cdn-icons-png.flaticon.com/128/814/814587.png' alt='world' />
+<div style={{display:'flex',flexDirection:'row',flexWrap:'wrap',justifyContent:'space-evenly',alignItems:'center'}}>
+<div style={{flex:'1 0 8rem',display:'flex',justifyContent:'center',alignItems:'center'}}>
+<img style={{height:30,width:30,objectFit:'contain'}} src='https://cdn-icons-png.flaticon.com/128/814/814587.png' alt='world' />
+</div>
 <Link id='Footer_link' to='https://github.com/sivaprasath2004'>support</Link>
 <Link id='Footer_link' to='/about'>About</Link>
 <Link id='Footer_link' to='/contact'>Contact</Link>
 <Link id='Footer_link' to='/book'>Book</Link>
 <Link id='Footer_link' to='/admin'>Admin</Link> 
-<h6>@copyright <Link to='https://github.com/sivaprasath2004'>Sivaprasath2004</Link></h6>
+<div style={{flex:'1 0 8rem',display:'flex',justifyContent:'center',alignItems:'center'}}>
+<h6 >@copyright <Link to='https://github.com/sivaprasath2004'>Sivaprasath2004</Link></h6>
+</div>
 </div>
 </div>
     </div>

@@ -1,6 +1,6 @@
 .golden_chief{
     display: flex;
-    padding-top: 5rem;
+    padding-top: 6rem;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -9,25 +9,39 @@
 .golden_chief div{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-evenly;
+    width: 100%;
     align-items: center;
-    padding: 2rem;
 }
-.golden_chief div div{
+.golden_chief div #content{
     display: flex;
+    max-width: 90%;
+    flex: 1 0 20rem;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-.golden_chief div div span{
+.golden_chief div #content p{
+  max-width: 90%;
+  text-align: left;
+  font-size: 1.2rem;
+}
+.golden_chief div #image{
+  flex: 1 0 20rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.golden_chief span{
     color: red;
-}
-.golden_chief div div p{
-    font-size: 1.2rem;
 }
 #Book_now{
     display: flex;
     flex-direction: column;
     background-color: white;
-    width: 40%;
+    width: 90%;
+    max-width: 500px;
     border-radius: 20px;
     margin-bottom: 50px;
     position: relative;
@@ -37,6 +51,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    gap: 2.5rem;
 }
 #input_container{
     width: 100%;
@@ -112,6 +127,7 @@
     .button-50 {
       padding: 12px 50px;
     }
+
   }
 
   .close_button{

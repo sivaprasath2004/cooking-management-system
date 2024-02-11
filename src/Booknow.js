@@ -34,14 +34,16 @@ const Booknow = () => {
   return (
     <>
      {
-      !checker.booking_loaded?
+      !checker.booking_loaded?<>
     <div className='golden_chief'>
+    <h1>Guarantee & <span>Certified</span></h1>
      <div>
-      <div>
-      <h1>Guarantee & <span>Certified</span></h1>
+      <div id='content'>
      <p>We assure you a flawlessly catered function with an unwavering guarantee and a steadfast commitment to maintaining the highest standards in food taste. Your event is our priority, and we stand by our promise of uncompromised excellence in both service and culinary delights. Trust us to elevate your occasion with delectable dishes, leaving a lasting impression on the taste buds of your guests.</p>
      </div>
+     <div id='image'>
       <img src={guarentee} alt='guarentee' />
+      </div>
      </div>
      <div id='Book_now'>
       <h2>
@@ -94,23 +96,23 @@ const Booknow = () => {
       </div>
       </div>
       </div>
-  <div style={{marginTop:-30}}>
+  <div style={{display:'flex',flexDirection:'column',paddingTop:10}}>
     <h3 style={{color:detail.error===undefined?'white':'red'}}>{detail.error===undefined?"No error":detail.error}</h3>
 <button className="button-50" onClick={()=>booked()}>Book</button>
 </div>
      </div> 
      
          </div>
+         </>
         :
-        <div className='golden_chief'>
-      <div style={{width:'40%',height:350,display:'flex',flexDirection:'column',
-      borderRadius:25,
-      boxShadow:'0 12px 12px 40rem rgb(0,0,0,.9)',backgroundColor:'white'}}>
+        <div style={{display:'grid',placeItems:'center'}}>
+      <div style={{width:'90%',maxWidth:400,height:350,display:'flex',marginTop:'10rem',flexDirection:'column',
+      borderRadius:25,backgroundColor:'white',justifyContent:'center',alignItems:'center'}}>
        <img style={{width:'100%',height:200,objectFit:'contain'}} src='https://cdn-icons-png.flaticon.com/128/5290/5290058.png'  alt='check_icon'/>
-       <h5>
+       <h5 style={{textAlign:'center'}}>
         Your Order was booked we will contact you, in few minutes..
        </h5>
-<button className="close_button" onClick={()=>setChecker(pre=>({...pre,booking_loaded:false}))}>Close</button>
+<button className="close_button" onClick={()=>setChecker(pre=>({...pre,booking_loaded:false}))} style={{width:'50%'}}>Close</button>
       </div>
       </div>
 }

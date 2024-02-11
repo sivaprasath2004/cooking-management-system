@@ -1,4 +1,4 @@
-import chicken_tikka from './assets/icons/chicken_tikka.png'
+import chicken_tikka from './icons/chicken_tikka.png'
 const data=[
     {
     url:'https://pngbuy.com/wp-content/uploads/2023/06/Crispy-Chicken-Handi-Biryani-PNG.png',

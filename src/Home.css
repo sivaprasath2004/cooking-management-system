@@ -1,26 +1,38 @@
-#home_page{
+#home_page,.About_page{
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0;
   padding-top:50px;
+  width: 100%;
   flex-direction: column;
   background-color: #fae68e;
 }
 #Heading{
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items:center;
   gap: 2rem;
   padding: 1rem;
 }
+#Heading #first_child{
+  flex:1 0 8rem;
+}
+#Heading #second_child{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex:1 0 8rem;
+}
 #Heading img{
+  display: grid;
   border-radius: 100px;
 }
 #head{
   text-align: left;
-  font-size: 5rem;
+  font-size: 3rem;
 }
 #head span{
   color: #ff7300;
@@ -96,22 +108,26 @@
 #sample_recepie{
   display: flex;
   flex-direction: column;
-  background-color: white;
   padding: 3rem;
   justify-content: center;
   align-items: center;
-  border-radius: 5%;
+  max-width:60% ;
+  background-color: white;
+  border-radius: 20px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 #sample_recepie div{
   display: flex;
+  flex-wrap: wrap;
   gap: 3rem;
 }
 #sample_recepie div div{
   display: flex;
+  flex: 1 0 8rem;
   flex-direction: column;
   gap: 0px;
   width: 200px;
+  justify-content: center;
   align-items: center;
 }
 #sample_recepie div div h2{
@@ -127,24 +143,29 @@
 }
 #people_choose{
   padding: 4rem;
+  margin-top: -3rem;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 2rem;
   align-items: center;
 }
 #people_choose img{
+  flex:1 0 20rem;
   width: 40%;
 }
 #people_choose div{
   display: flex;
+  flex:1 0 20rem;
   width: 50%;
   gap: 0px;
   flex-direction: column;
   justify-content: flex-start;
 }
-#people_choose div h4{
-  font-size: 2rem;
+h4{
+  text-align: center;
+  font-size:2rem;
   font-weight: 700;
 }
 #people_choose div div{
@@ -158,26 +179,35 @@
   font-size: 1.5rem;
   font-weight: 600;
 }
+.custome_support h5{
+  margin-top:-3rem ;
+  font-size: 2rem;
+}
+.custome_support h5 span{
+  color: #ff0000;
+}
 #custome_support{
   display: flex;
-  justify-content: space-evenly;
+  margin-top: -4rem;
+  flex-wrap: wrap-reverse;
+  justify-content: center;
   align-items: center;
-  padding: 5rem;
+  padding: 4rem;
 }
 #custome_support img{
+  flex: 1 0 20rem;
+  object-fit: contain;
   height: 300px;
 }
 #custome_support div{
-  width: 60%;
+  flex: 1 0 20rem;
+  width: 70%;
 }
-#custome_support div h5{
-  font-size: 2rem;
-}
-#custome_support div span{
-  color: #ff0000;
-}
+
 #Footer_link{
   font-size: 15px;
   text-decoration: none;
+  text-align: center;
+  flex: 1 0 8rem;
   color: #111;
 }

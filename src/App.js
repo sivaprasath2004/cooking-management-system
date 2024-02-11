@@ -21,21 +21,21 @@ const App = () => {
     {
       !isVisible?
       <>
-      <div transition-style="in:wipe:bottom-right" style={{display:'flex',height:'100vh',backgroundColor:'black',justifyContent:'center',alignItems:'center'}}>
-      <div>
-       <h1 style={{color:'white',fontSize:30}}>
+      <div transition-style="in:wipe:bottom-right" style={{display:'flex',flexWrap:'wrap',height:'100vh',backgroundColor:'black',justifyContent:'center',alignItems:'center'}}>
+      <div style={{flex:'1 0 10rem',display:'flex',justifyContent:'center',alignItems:'center',flexDirection:'column'}}>
+       <h1 style={{color:'white',fontSize:30,textAlign:'center'}}>
         Hello Welcome To
        </h1>
-       <h2 style={{textShadow: '-2px -2px 2px green',color:'green',fontSize:40}}>
+       <h2 style={{textShadow: '-2px -2px 2px green',color:'green',fontSize:40,textAlign:'center'}}>
         Cooking Management system
        </h2>
       </div>
-      <div>
-        <img src={logo} alt='logo' />
+      <div style={{flex:'1 0 10rem',display:'flex',justifyContent:'center',marginTop:'-5rem',alignItems:'center'}}>
+        <img src={logo} alt='logo' style={{objectFit:'contain'}} />
       </div>
-      <h5 style={{color:'white',position:'absolute',bottom:'3%'}}>@copyright 
+      <h5 style={{color:'white',position:'absolute',padding:10,bottom:'0%'}}>@copyright 
       <Link to='https://github.com/Sivaprasath2004'>
-      Sivaprasath2004</Link></h5>
+       Sivaprasath2004</Link></h5>
       </div>
       
       </>
