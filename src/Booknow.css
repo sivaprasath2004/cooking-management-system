@@ -3,12 +3,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-top:6rem;
     width: 100%;
 }
 .golden_chief div{
     display: flex;
     flex-direction: row;
-    padding-top:6rem;
     flex-wrap: wrap;
     justify-content: space-evenly;
     width: 100%;
