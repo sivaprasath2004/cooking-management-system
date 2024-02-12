@@ -1,6 +1,6 @@
 .golden_chief{
     display: flex;
-    margin-top: 6rem;
+    padding-top: 6rem;
     flex-direction: column;
     justify-content: center;
     align-items: center;
