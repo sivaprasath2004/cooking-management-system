@@ -20,7 +20,7 @@ At our core, we're passionate about crafting unforgettable culinary experiences.
     <div style={{width:'90%',height:50,display:'flex',gap:'1rem',flexWrap:'wrap',justifyContent:'center',alignItems:'center'}}>
 {
   cheif.map((item,index)=>(
-    <div key={`first_tag ${index}`} id='About_goldn_cheif' style={{flex:'.5 0 8rem',display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center',backgroundColor:'white',borderRadius:15}}>
+    <div key={`first_tag ${index}`} id='About_goldn_cheif' style={{flex:'.5 0 4rem',display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center',backgroundColor:'white',borderRadius:15}}>
      <img src={item.url} alt={`img${index}`} style={{padding:'2rem',width:200,height:200,objectFit:'contain'}}/>
      <h2 style={{fontSize:16}}>{item.name}</h2>
      <h3 style={{fontSize:16,color:'#333'}}>{item.experience}</h3>
