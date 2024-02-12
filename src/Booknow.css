@@ -1,6 +1,5 @@
 .golden_chief{
     display: flex;
-    padding-top: 6rem;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -9,6 +8,7 @@
 .golden_chief div{
     display: flex;
     flex-direction: row;
+    margin-top:6rem;
     flex-wrap: wrap;
     justify-content: space-evenly;
     width: 100%;
