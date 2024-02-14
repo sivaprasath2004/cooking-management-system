@@ -1,21 +1,71 @@
 import chicken_tikka from './icons/chicken_tikka.png'
-const data=[
+const breakfast=[
     {
-    url:'https://pngbuy.com/wp-content/uploads/2023/06/Crispy-Chicken-Handi-Biryani-PNG.png',
-    content:'Chicken biryani is a flavorful South Asian dish made with aromatic basmati rice, tender chicken pieces, and a blend of rich spices. The layers of marinated meat and rice are cooked to perfection, creating a delicious and fragrant one-pot meal.',
-    alt:'chicken',
-    heading:'Chicken Biryani'
+    url:require('./icons/pizza.png'),
+    alt:'Pizza',
+    heading:'Pizza',
+    prize:'₹350'
 
 },{
     url:'https://png.pngtree.com/png-clipart/20231005/original/pngtree-barger-fast-food-on-transparent-background-png-image_13279291.png',
     alt:"burger",
     heading:"Burger",
-    content:`A classic burger features a succulent patty, typically made from ground beef, grilled to perfection. Nestled in a soft, toasted bun, it's topped with crisp lettuce, juicy tomatoes, and your choice of condiments, creating a satisfying handheld delight. `,
+    prize:'₹400'
 },{
-    url:chicken_tikka,
-    content:`Immerse chicken chunks in a blend of yogurt and spices, letting them soak up the essence of cumin, coriander, and garam masala. Grill to perfection for a juicy and flavorful Chicken Tikka experience.Achieve the ideal smoky char by grilling the marinated chicken.`,
-    heading:'Chicken Tikka',
-    alt:'chicken-tikka'
+    url:require('./icons/3.png'),
+    heading:'Noodles',
+    alt:'Noodles',
+    prize:'₹350'
+
+},{
+    url:require('./icons/5.png'),
+    heading:'Bread & Egg',
+    alt:'Bread & Egg',
+    prize:'₹150'
 }
 ]
+const lunch=[{
+    url:'https://pngbuy.com/wp-content/uploads/2023/06/Crispy-Chicken-Handi-Biryani-PNG.png',
+    alt:'chicken',
+    heading:'Chicken Biryani',
+    prize:'₹550'
+},{
+    url:chicken_tikka,
+    heading:'Chicken Tikka',
+    alt:'chicken-tikka',
+    prize:'₹350'
+},{
+    url:require('./icons/1.png'),
+    heading:'Mutton Beffis',
+    alt:'Mutton Beffis',
+    prize:'₹350'
+},{
+    url:require('./icons/2.png'),
+    heading:'Mutton Duffy',
+    alt:'Mutton Duffy',
+    prize:'₹450'
+}
+]
+const dinner=[{
+    url:require('./icons/sushi.png'),
+    heading:'sushi',
+    alt:'sushi(chines dish)',
+    prize:'₹550'
+},{
+    url:require('./icons/4.png'),
+    heading:'Mushroom & Mutton Noodles',
+    alt:'Mushroom & Mutton Noodles',
+    prize:'₹400'
+},{url:require('./icons/chinies.png'),
+heading:'Pron Fry Noodles',
+alt:'Pron Fry Noodles',
+prize:'₹650'
+},{
+    url:require('./icons/6.png'),
+heading:'Salad',
+alt:'Salad',
+prize:'₹150'
+}
+]
+const data={breakfast,lunch,dinner}
 export default data

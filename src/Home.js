@@ -6,10 +6,11 @@ import chief from './assets/icons/chief_image.png'
 import chinies from './assets/icons/chinies.png'
 import { Link } from 'react-router-dom'
 const Home = () => {
-  const data=detail
-    const [checker,setChecker]=useState({})
+  const breakfast=detail.breakfast
+  const lunch=detail.lunch
+  const dinner=detail.dinner
   return (
-    <div id='home_page'>
+    <div id='home_page'  style={{display:'flex',flexWrap:'wrap'}}>
       <div id='Heading'>
         <div id='first_child'>
       <h1 id='head'>
@@ -25,24 +26,46 @@ const Home = () => {
      
       </div>
       </div>
+      <h4>Our Famous Packages</h4>
       <div id='sample_recepie'>
         <div>
-        <h2>Our famous dish</h2>
+          <h2>Breakfast Packages</h2>
         </div>
         <div>
-       {data.map((item)=>( 
+       {breakfast.map((item)=>( 
        <div>
         <img src={item.url} alt={item.alt} />
         <h2>{item.heading}</h2>
-        <p>{checker[item.alt]===undefined || !checker[item.alt]?item.content.slice(0,35)+'...':item.content}</p>
-        <button 
-        style={{width:'60%',height:30,backgroundColor:checker[item.alt]===undefined || !checker[item.alt]?'#ff7300':'white',borderRadius:25,border:checker[item.alt]===undefined || !checker[item.alt]?'none':'1px solid #ff7300',boxShadow:'0 12px 12px rgba(0,0,0,0.2)'}}
-        onClick={()=>setChecker((pre)=>({...pre,[item.alt]:checker[item.alt]===undefined?true:!checker[item.alt]}))}>{checker[item.alt]===undefined || !checker[item.alt]?'See More':'See less'}</button>
-        </div>
+        <p>{item.prize}</p>
+       </div>
 ))}
-</div>
-
-      </div>
+</div></div>
+<div id='sample_recepie'>
+        <div>
+          <h2>Lunch Packages</h2>
+        </div>
+        <div>
+       {lunch.map((item)=>( 
+       <div>
+        <img src={item.url} alt={item.alt} />
+        <h2>{item.heading}</h2>
+        <p>{item.prize}</p>
+       </div>
+))}
+</div></div>
+<div id='sample_recepie'>
+        <div>
+          <h2>Dinner Packages</h2>
+        </div>
+        <div>
+       {dinner.map((item)=>( 
+       <div>
+        <img src={item.url} alt={item.alt} />
+        <h2>{item.heading}</h2>
+        <p>{item.prize}</p>
+       </div>
+))}
+</div></div>
       <h4>Why People Choose Us?</h4>
       <div id='people_choose'>
   <img src={chinies} alt='china food' />

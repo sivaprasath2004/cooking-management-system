@@ -111,7 +111,9 @@
   padding: 3rem;
   justify-content: center;
   align-items: center;
-  max-width:60% ;
+  min-width: 45%;
+  margin-bottom: 20px;
+  max-width:71% ;
   background-color: white;
   border-radius: 20px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -133,8 +135,9 @@
 #sample_recepie div div h2{
   font-size: 1rem;
 }
-#sample_recepie div div p{
-  font-size: .8rem;
+#sample_recepie div p{
+  font-size: 1rem;
+  font-weight: 600;
   color: #222;
 }
 #sample_recepie div img{
