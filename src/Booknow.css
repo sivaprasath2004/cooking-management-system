@@ -1,9 +1,13 @@
 .golden_chief{
     display: flex;
+<<<<<<< HEAD
     padding-top: 6rem;
+=======
+>>>>>>> refs/remotes/origin/main
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-top:6rem;
     width: 100%;
 }
 .golden_chief div{
@@ -17,7 +21,11 @@
 .golden_chief div #content{
     display: flex;
     max-width: 90%;
+<<<<<<< HEAD
     flex: 1 0 20rem;
+=======
+    flex: 1 0 10rem;
+>>>>>>> refs/remotes/origin/main
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -28,7 +36,11 @@
   font-size: 1.2rem;
 }
 .golden_chief div #image{
+<<<<<<< HEAD
   flex: 1 0 20rem;
+=======
+  flex: 1 0 10rem;
+>>>>>>> refs/remotes/origin/main
   display: flex;
   justify-content: center;
   align-items: center;
