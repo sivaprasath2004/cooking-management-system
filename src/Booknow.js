@@ -124,7 +124,7 @@ const Booknow = () => {
       }
       </div>
       <h2 style={{fontSize:18,fontWeight:'600'}}>Select Your Dish</h2>
-      <div style={{width:'80%',backgroundColor:'white',borderRadius:10,boxShadow:'0 6px 6px rgba(0,0,0,0.5)',border:'1px solid black',gap:'1rem'}}>
+      <div style={{width:'80%',backgroundColor:'white',borderRadius:10,boxShadow:'0 6px 6px rgba(0,0,0,0.5)',border:'1px solid black',gap:'0.5rem'}}>
       {dishNames.length===0?
       <p>No more Dishes Selected
       </p>:
