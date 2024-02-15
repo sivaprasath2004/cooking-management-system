@@ -11,7 +11,10 @@ const About = () => {
 At our core, we're passionate about crafting unforgettable culinary experiences. With a commitment to quality ingredients and creative flair, we strive to delight taste buds and create lasting memories. Our journey began with a vision to redefine traditional flavors and elevate dining experiences. Guided by innovation and a dedication to excellence, we aim to be your go-to destination for gastronomic adventures. Welcome to a world where every dish tells a story, and every bite is an invitation to savor the extraordinary.</p>
 </div>
     <div  style={{flex:'1 0 10rem',display:'flex',justifyContent:'center',alignItems:'center'}}>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1ec58b6734bba81cf25e63b6c9332c58122138ed
     <img src={require('./assets/icons/about_page_logo.png')} alt='about' style={{height:350,objectFit:'contain',display:'grid',alignSelf:'center'}} />
     </div>
     </div>
