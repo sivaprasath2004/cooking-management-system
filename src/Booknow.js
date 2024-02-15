@@ -3,11 +3,13 @@ import Time from './Time'
 import './Booknow.css'
 import axios from 'axios'
 import guarentee from './assets/icons/guarentee.png'
+import cheif from './assets/cheif'
+import data from './assets/data'
 const Booknow = () => {
   let time=Time()
   const [detail,setDetails]=useState({Mark:'No', bookTime:time})
   const [checker,setChecker]=useState({booking_loaded:false})
-  console.log(detail)
+  let dishes=[]
   async function booked(){
     if(detail.name===undefined ||detail.MobileNumber===undefined||detail.FunctionName===undefined||detail.Members===undefined||detail.Address===undefined){
         setDetails(pre=>({...pre,error:"Fill the form"}))
@@ -31,6 +33,7 @@ const Booknow = () => {
   }
     }
   }
+  console.log(dishes)
   return (
     <>
      {
@@ -94,6 +97,41 @@ const Booknow = () => {
         value={detail.Address}
         rows={3} placeholder='Function Location' onChange={(e)=>setDetails(pre=>({...pre,Address:e.target.value}))}/>
       </div>
+      </div>
+      <h2 style={{fontSize:18,fontWeight:'600'}}>Select Your Cook</h2>
+      {checker.image!==undefined?<div style={{display:'flex',flexWrap:'wrap',width:'90%',padding:10,justifyContent:'center',alignItems:'center',borderRadius:15,boxShadow:'0 1px 1px rgba(0,0,0,0.5)'}}>
+        <img src={cheif[checker.image].url} alt={cheif[checker.image].name+'chief'} key={cheif[checker.image].name} style={{flex:'1 0 8rem',height:150,width:150,objectFit:'contain'}} />
+        <div key='cheifImage_container' style={{flex:'1 0 8rem',display:'flex',flexDirection:'column'}}>
+          <p key={`cheif_name`}>{cheif[checker.image].name}</p>
+          <p key={`cheif_exper`}>{cheif[checker.image].experience}</p> </div>
+      </div>:<></>}
+      <div style={{display:'flex',flexWrap:'wrap',width:'90%',justifyContent:'center',alignItems:'center'}}>
+      {
+        cheif.map((item,index)=>(
+         <>
+     <img src={item.url} alt={`img_chiefs_bookPage_images${index}`} key={`images_tag_chief_bookpage${index}`} style={{width:100,height:100,objectFit:'contain',padding:3,border:checker.image===index?'1px solid black':'1px solid white'}} onClick={()=>setChecker(pre=>({...pre,image:index}))}/>
+         </> 
+        ))
+      }
+      </div>
+      <h2 style={{fontSize:18,fontWeight:'600'}}>Select Your Dish</h2>
+      <div style={{display:'flex',flexWrap:'wrap',width:'90%',justifyContent:'center',alignItems:'center',gap:'1rem'}}>
+       {
+        data.breakfast.map((item,index)=>(
+          <img src={item.url} alt={`img_breakfast_dis${index}`} key={`images_tag_breakfast_food_book${index}`} style={{width:100,height:100,objectFit:'contain',padding:3,border:dishes[index]===index?'1px solid black':'1px solid white'}} onClick={()=>dishes.push(item.heading)}/>
+        ))
+       }
+ {
+        data.lunch.map((item,index)=>(
+        
+          <img src={item.url} alt={`img_lunch_dish${index+4}`} key={`images_tag_lunch_food_book${index+4}`} style={{width:100,height:100,objectFit:'contain',padding:3,border:dishes[index+4]===index+4?'1px solid black':'1px solid white'}} onClick={()=>dishes.push(item.heading)}/>
+        ))
+       }
+        {
+        data.dinner.map((item,index)=>(
+          <img src={item.url} alt={`img_dinner_dish${index+8}`} key={`images_tag_dinner_food_book${index+8}`} style={{width:100,height:100,objectFit:'contain',padding:3,border:dishes[index+8]===index+8?'1px solid black':'1px solid white'}} onClick={()=>dishes.push(item.heading)}/>
+        ))
+       }
       </div>
       </div>
   <div style={{display:'flex',flexDirection:'column',paddingTop:10}}>

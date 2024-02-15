@@ -22,9 +22,9 @@ At our core, we're passionate about crafting unforgettable culinary experiences.
 {
   cheif.map((item,index)=>(
     <div key={`first_tag ${index}`} id='About_goldn_cheif' style={{flex:'.5 0 8rem',display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center',backgroundColor:'white',borderRadius:15}}>
-     <img src={item.url} alt={`img${index}`} style={{padding:'2rem',width:200,height:200,objectFit:'contain'}}/>
-     <h2 style={{fontSize:16}}>{item.name}</h2>
-     <h3 style={{fontSize:16,color:'#333'}}>{item.experience}</h3>
+     <img src={item.url} alt={`img${index}`} key={`images_tag_chief${index}`} style={{padding:'2rem',width:200,height:200,objectFit:'contain'}}/>
+     <h2 key={`chief_name_tag${index}`} style={{fontSize:16}}>{item.name}</h2>
+     <h3 key={`chief_experience_tag${index}`} style={{fontSize:16,color:'#333'}}>{item.experience}</h3>
       </div>
   ))
 }
