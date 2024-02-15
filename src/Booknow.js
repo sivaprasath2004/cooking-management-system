@@ -51,7 +51,7 @@ const Booknow = () => {
      <p>We assure you a flawlessly catered function with an unwavering guarantee and a steadfast commitment to maintaining the highest standards in food taste. Your event is our priority, and we stand by our promise of uncompromised excellence in both service and culinary delights. Trust us to elevate your occasion with delectable dishes, leaving a lasting impression on the taste buds of your guests.</p>
      </div>
      <div id='image'>
-      <img src={guarentee} alt='guarentee' />
+      <img src={guarentee} alt='guarentee' style={{height:350}} />
       </div>
      </div>
      <div id='Book_now'>
