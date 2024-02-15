@@ -1,12 +1,15 @@
 {
   "files": {
     "main.css": "/static/css/main.7d667a99.css",
-    "main.js": "/static/js/main.6140bd07.js",
+    "main.js": "/static/js/main.556e9d5a.js",
     "static/media/pizza.png": "/static/media/pizza.4984887afe427bbd957b.png",
     "static/media/sushi.png": "/static/media/sushi.d78ecb164d4d1a3b0559.png",
     "static/media/chinies.png": "/static/media/chinies.5239be4ee4c9b517bdeb.png",
+    "static/media/cheif(6).png": "/static/media/cheif(6).d7fdb0c007676837a97d.png",
     "static/media/about_page_logo.png": "/static/media/about_page_logo.7e4251542fa958e224c5.png",
     "static/media/chicken_tikka.png": "/static/media/chicken_tikka.2a8c936cabd77c6f6690.png",
+    "static/media/manikandan.png": "/static/media/manikandan.bcfd2ec24f7f6a944f78.png",
+    "static/media/cheif_damuDharan.png": "/static/media/cheif_damuDharan.af6c7998dd062f7fa898.png",
     "static/media/guarentee.png": "/static/media/guarentee.563d168a3b49ba8a98a6.png",
     "static/media/4.png": "/static/media/4.bcadcd49542df02ba4c0.png",
     "static/media/2.png": "/static/media/2.397fa686ef1fd2073d82.png",
@@ -18,12 +21,13 @@
     "static/media/cheifs1.jpg": "/static/media/cheifs1.e8cfb46b299644c31f51.jpg",
     "static/media/chief_image.png": "/static/media/chief_image.ee83a5046070e48ebf17.png",
     "static/media/chief_images.png": "/static/media/chief_images.68bc65ec9f674ab13fde.png",
+    "static/media/sivangi_mathur.png": "/static/media/sivangi_mathur.443dcdb521fdec82cafe.png",
     "index.html": "/index.html",
     "main.7d667a99.css.map": "/static/css/main.7d667a99.css.map",
-    "main.6140bd07.js.map": "/static/js/main.6140bd07.js.map"
+    "main.556e9d5a.js.map": "/static/js/main.556e9d5a.js.map"
   },
   "entrypoints": [
     "static/css/main.7d667a99.css",
-    "static/js/main.6140bd07.js"
+    "static/js/main.556e9d5a.js"
   ]
 }
