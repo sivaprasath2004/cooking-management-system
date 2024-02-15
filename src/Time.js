@@ -10,7 +10,6 @@ const Time=()=>{
     const ampm = hours >= 12 ? 'PM' : 'AM';
     hours = hours % 12 || 12;
     const formattedDateTime = `${hours}:${minutes}:${seconds} ${ampm}  ${day}-${month}-${year}`;
-    console.log("Current date and time:", formattedDateTime);
     return formattedDateTime
     }
     export default Time
