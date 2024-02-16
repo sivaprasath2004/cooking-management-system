@@ -25,7 +25,6 @@ const Booknow = () => {
         dish:dishNames,
         cheif:checker.image===undefined?'No more cook selected':checker.image
       })
-      setDetails({Mark:'No', bookTime:time})
     }
     else{
       setDetails(pre=>({...pre,error:'Enter valid details'}))
@@ -39,6 +38,11 @@ const Booknow = () => {
     setDetails(pre=>({...pre,error:"Enter valid Mobile Number"}))
   }
     }
+  }
+  function handle_close(){
+    setDetails({Mark:'No', bookTime:time})
+    setDishName([])
+    setChecker({booking_loaded:false})
   }
   return (
     <>
@@ -180,7 +184,7 @@ const Booknow = () => {
        <h5 style={{textAlign:'center'}}>
         Your Order was booked we will contact you, in few minutes..
        </h5>
-<button className="close_button" onClick={()=>setChecker(pre=>({...pre,booking_loaded:false}))} style={{width:'50%'}}>Close</button>
+<button className="close_button" onClick={()=>handle_close()} style={{width:'50%'}}>Close</button>
       </div>
       </div>
 }
