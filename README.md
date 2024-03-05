@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+# Cooking Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The Cooking Management System is a web application built with ReactJS aimed at helping users organize their cooking activities and plan meals efficiently. Users can select dishes to cook, manage recipes, and organize their cooking schedule.
 
-## Available Scripts
+## Link
+- **<a href='https://cooking-management-system-app.vercel.app/'>CLICK HERE</a>
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **Recipe Management:** Users can add, edit, and delete recipes.
+- **Meal Planning:** Plan meals for specific days and times.
+- **Cook Selection:** Select a cook for each meal or dish.
+- **Cooking Schedule:** Organize cooking tasks and schedule.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technologies Used
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- ReactJS
+- React Router
+- State Management (Redux, Context API, etc.)
+- UI Framework (Bootstrap, Material UI, etc.)
+- Backend (Optional, for data storage and management)
 
-### `npm test`
+## Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone the repository to your local machine:
 
-### `npm run build`
+    ```bash
+    git clone https://github.com/sivaprasath2004/cooking-management-system.git
+    ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Navigate to the project directory:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    ```bash
+    cd cooking-management-system
+    ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Install dependencies:
 
-### `npm run eject`
+    ```bash
+    npm install
+    ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+4. Start the development server:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    ```bash
+    npm start
+    ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+5. Open your browser and visit `http://localhost:3000` to view the application.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Usage
 
-## Learn More
+1. Register or log in to your account.
+2. Explore available recipes or add your own.
+3. Plan meals by selecting dishes and assigning cooks.
+4. Organize your cooking schedule according to your meal plan.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Contributing
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Contributions are welcome! If you'd like to contribute to this project, feel free to submit pull requests or open issues for any improvements or features you'd like to see added.
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
