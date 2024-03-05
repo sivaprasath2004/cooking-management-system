@@ -3,7 +3,7 @@
 The Cooking Management System is a web application built with ReactJS aimed at helping users organize their cooking activities and plan meals efficiently. Users can select dishes to cook, manage recipes, and organize their cooking schedule.
 
 ## Link
-- **<a href='https://cooking-management-system-app.vercel.app/'>CLICK HERE</a>
+- **<a href='https://cooking-management-system-app.vercel.app/'>CLICK HERE</a>**
 
 ## Features
 
