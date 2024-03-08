@@ -1,7 +1,4 @@
-#login_account_header{
-    font-size: 1.6rem;
-    color: black;
-}
+
 #orderPage_buttons{
   border: 0;
   border-radius: 4px;
@@ -85,4 +82,63 @@
     z-index: 1;
     font-weight: 900;
     position: relative;
+  }
+  #login_container{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255,.1);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 -1px 15px rgba(0, 0, 0, .3);
+    border-radius: 12px;
+  }
+  .login_container{
+   height: 400px;
+   width: 300px;
+   position: relative;
+   z-index: 1;
+  }
+  .login_container::before{
+    content: "";
+    height: 200px;
+    width: 200px;
+    border-radius: 100%;
+    background: linear-gradient(#08ffe6,#fcd200);
+    position: absolute;
+    top: -10%;
+    left: -20%;
+  }
+  .login_container::after{
+    content: "";
+    height: 200px;
+    width: 200px;
+    border-radius: 100%;
+    background: linear-gradient(#fcd200,#fc002e);
+    position: absolute;
+    z-index: -1;
+    bottom: -10%;
+    right: -20%;
+  }
+  #ball{
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    position: absolute;
+    z-index: -1;
+    translate: 13rem 4rem;
+    background-color: #08ffe6;
+  }
+  #ball::before{
+    content: "";
+    height: 100%;
+    width: 100%;
+    background-color: #ff7300;
+    border-radius: 50%;
+    position: absolute;
+    translate: -12rem 15rem;
+    z-index: -1;
+  }
+  @media (max-width:400px) {
+    #login_container{
+      width: 100%;
+    }
   }

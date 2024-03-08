@@ -37,14 +37,14 @@ setData(pre=>({...pre,orders:value}))
   setData(pre=>({...pre,delete:true}))
   }
   return (
-    <div className='order_page' style={{height:'100%',width:'100%',display:'flex',flexWrap:'wrap',justifyContent:'center',alignItems:'center'}}>
+    <div className='order_page' style={{height:'100%',width:'100%',display:'flex',flexWrap:'wrap',gap:10,justifyContent:'center',alignItems:'center',paddingTop:60}}>
         {datas.error?<h5>undefined</h5>:
         <>
             {datas.orders?.map((item,index)=>(
               <div key={`first${index}`}
-               style={{display:'flex',flexDirection:'column',flexWrap:'wrap',width:'95%',borderBottom:`2px solid black`,backgroundColor:'white'}}>
+               style={{display:'flex',flexDirection:'column',flexWrap:'wrap',width:'95%',backgroundColor:'white',borderRadius:15}}>
                  <div key={`item_manage_con${index}`} style={{flex:'1 0 8rem',display:'flex',flexWrap:'wrap'}}>
-                 <img key={`order_page_image_${index}`} src={cheif[item.Cheif].url}  style={{height:250,flex:'1 0 20rem',width:250,objectFit:'contain'}} alt={cheif[item.Cheif].name}/>
+                 <img key={`order_page_image_${index}`} src={cheif[item.Cheif].url}  style={{height:250,flex:'1 0 20rem',width:250,objectFit:'contain',margin:10}} alt={cheif[item.Cheif].name}/>
                 
                 <div key={`menus_item_${index}`} style={{flex:'1 0 20rem',padding:10,gap:20,display:'flex',flexDirection:'column',flexWrap:'wrap',flexFlow:'row wrap'}}>
                   {

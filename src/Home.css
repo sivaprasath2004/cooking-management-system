@@ -38,7 +38,7 @@
   color: #ff7300;
   border-bottom: 2px solid #48ff00;
 }
-.button-85 {
+.page_button,#page_button_white{
   padding: 0.6em 2em;
   border: none;
   outline: none;
@@ -52,9 +52,12 @@
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
 }
-
-.button-85:before {
+#page_button_white,#page_button_white::after{color:#111;
+  background: #ffffff}
+.page_button:before {
   content: "";
   background: linear-gradient(
     45deg,
@@ -94,7 +97,7 @@
   }
 }
 
-.button-85:after {
+.page_button:after {
   z-index: -1;
   content: "";
   position: absolute;
@@ -105,6 +108,7 @@
   top: 0;
   border-radius: 10px;
 }
+
 #sample_recepie{
   display: flex;
   flex-direction: column;
@@ -213,4 +217,28 @@ h4{
   text-align: center;
   flex: 1 0 8rem;
   color: #111;
+}
+.image-container img{
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+#image-container img{
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+#packages{
+  font-family: "Madimi One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+#packageName{
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+#headings{
+  font-family: "Rowdies", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }

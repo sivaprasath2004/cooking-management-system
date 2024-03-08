@@ -50,7 +50,7 @@ const Booknow = () => {
     let arr=[]
 if(detail.Bookdate){
   if(checker.booked_Cheif){
-  let val=checker.booked_Cheif.find(item=>item.Bookdate===detail.Bookdate)
+  let val=checker.booked_Cheif?.find(item=>item.Bookdate===detail.Bookdate)
   if(val){
     setChecker(pre=>({...pre,image:undefined}))
   }
@@ -69,7 +69,7 @@ if(detail.Bookdate){
      {
       !checker.booking_loaded?<>
     <div className='golden_chief'>
-    <h1>Guarantee & <span>Certified</span></h1>
+    <h1 id='headings'>Guarantee & <span>Certified</span></h1>
      <div>
       <div id='content'>
      <p>We assure you a flawlessly catered function with an unwavering guarantee and a steadfast commitment to maintaining the highest standards in food taste. Your event is our priority, and we stand by our promise of uncompromised excellence in both service and culinary delights. Trust us to elevate your occasion with delectable dishes, leaving a lasting impression on the taste buds of your guests.</p>
@@ -79,7 +79,7 @@ if(detail.Bookdate){
       </div>
      </div>
      <div id='Book_now'>
-      <h2>
+      <h2 id='packages'>
         Book Now
       </h2>
       <div id='Book_now_container'>
@@ -133,19 +133,21 @@ if(detail.Bookdate){
       {checker.image!==undefined?
       <>
         <img src={cheif[checker.image].url} alt={cheif[checker.image].name+'chief'} key={cheif[checker.image].name} style={{flex:'1 0 8rem',height:150,width:150,objectFit:'contain'}} />
-        <div key='cheifImage_container' style={{flex:'1 0 8rem',display:'flex',flexDirection:'column'}}>
-          <p >{cheif[checker.image].name}</p>
-          <p >{cheif[checker.image].experience}</p> </div>
+        <div key='cheifImage_container' style={{flex:'1 0 8rem',padding:10,display:'flex',justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'column'}}>
+          <p >{`Name:${cheif[checker.image].name}`}</p>
+          <p>{`Prize:${cheif[checker.image].prize}`}</p>
+          <p >{`Exp:${cheif[checker.image].experience}`}</p> </div>
           </>
       :<p>!! No More Cook Selected</p>}
       </div>
       <div style={{display:'flex',flexWrap:'wrap',width:'90%',justifyContent:'center',alignItems:'center',gap:10}}>
       {
         cheif.map((item,index)=>(
-          <div key={`parentOfImage_tag${index}`} style={{width:100,height:100,position:'relative',padding:10,boxShadow:'0 -2px 5px rgba(0,0,0,0.5)'}}>
-     <img src={item.url} alt={`img_chiefs_bookPage_images${index}`} key={`images_tag_chief_bookpage${index}`} style={{width:'100%',height:'100%',objectFit:'contain',border: checker.booked_cheif!==undefined &&  checker.booked_cheif.find(item=>item?.Cheif===index)?'1px solid black':'1px solid white'}} onClick={()=>checker.booked_cheif?.find(item=>item?.Cheif===index)?console.log(" "):setChecker(pre=>({...pre,image:index}))}/>
+          <div key={`parentOfImage_tag${index}`} style={{width:100,height:100,position:'relative',padding:10,boxShadow:'0 1px 5px rgba(0,0,0,0.5)',border:checker.booked_cheif?.find(item=>item?.Cheif===index)?'2px solid red':checker.image===index?'2px solid green':'2px solid white',borderRadius:12,overflow:'hidden'}}>
+     <img src={item.url} alt={`img_chiefs_bookPage_images${index}`} key={`images_tag_chief_bookpage${index}`} style={{width:'100%',height:'100%',objectFit:'contain'}} onClick={()=>checker.booked_cheif?.find(item=>item?.Cheif===index)?console.log(" "):setChecker(pre=>({...pre,image:index}))}/>
         {
-          checker.booked_cheif?.find(item=>item?.Cheif===index)?<div key={`outerOf_tag${index}`} style={{color:'red',position:'absolute',height:'100%',width:'100%',top:0,left:0,backdropFilter:'blur(3px)',cursor:'pointer',textAlign:'center',fontWeight:'900'}}>Already Booked</div>:<div key={`innerOf_tag${index}`}></div>
+          checker.booked_cheif?.find(item=>item?.Cheif===index)?<div key={`outerOf_tag${index}`} style={{position:'absolute',height:'100%',width:'100%',top:0,left:0,backdropFilter:'blur(3px)',cursor:'pointer',fontWeight:'900',display:'flex',justifyContent:'center',alignItems:'center'}}>
+            <p key={`already_booked's${index}`} style={{height:'70%',width:'70%',display:'flex',justifyContent:'center',alignItems:'center',color:'black',fontSize:'larger',fontWeight:'900',backgroundColor:'rgba(255 0 0 / 48%)',borderRadius:'100%',boxShadow:'0 4px 15px rgb(255 0 0)'}}>Booked</p></div>:<div key={`innerOf_tag${index}`}></div>
         }
         </div>
      

@@ -3,7 +3,7 @@ import React from 'react'
 const Contact = () => {
   return (
     <div className='golden_chief'>
-      <h1  style={{color:'red'}}>Contact</h1>
+      <h1  style={{color:'red'}} id='headings'>Contact</h1>
       <div style={{display:'flex',width:'80%',justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'column'}}>
       <p style={{textAlign:'left'}}>We're eager to hear from you! Whether you have questions, feedback, or simply want to connect, we're here to assist you. Feel free to reach out to us using the contact information provided below:
       </p>

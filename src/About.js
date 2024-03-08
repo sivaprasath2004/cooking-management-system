@@ -4,10 +4,10 @@ const About = () => {
   return (
     <div className='About_page'>
    <div style={{marginTop:50,display:'flex',flexDirection:'column',fontSize:20,fontWeight:600}}>
-    <h1>About Us</h1>
+    <h1 id='headings'>About Us</h1>
     <div style={{marginTop:-50,width:'100%',display:'flex',flexWrap:'wrap-reverse',justifyContent:'center',gap:0,alignItems:'center'}}>
       <div style={{flex:'1 0 10rem',maxWidth:'80%',display:'flex',justifyContent:'center',alignItems:'center'}}>
-      <p style={{fontSize:18,fontWeight:500,textAlign:'left'}}>
+      <p style={{fontWeight:500,textAlign:'left',padding:5}} >
 At our core, we're passionate about crafting unforgettable culinary experiences. With a commitment to quality ingredients and creative flair, we strive to delight taste buds and create lasting memories. Our journey began with a vision to redefine traditional flavors and elevate dining experiences. Guided by innovation and a dedication to excellence, we aim to be your go-to destination for gastronomic adventures. Welcome to a world where every dish tells a story, and every bite is an invitation to savor the extraordinary.</p>
 </div>
     <div  style={{flex:'1 0 10rem',display:'flex',justifyContent:'center',alignItems:'center'}}>
@@ -16,7 +16,7 @@ At our core, we're passionate about crafting unforgettable culinary experiences.
     </div>
    </div>
    <div style={{width:'100%',display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
-    <h1>Our Golden Cheifs</h1>
+    <h1 id='headings'>Our Golden Cheifs</h1>
     <div style={{width:'90%',height:50,display:'flex',gap:'1rem',flexWrap:'wrap',justifyContent:'center',alignItems:'center'}}>
 {
   cheif.map((item,index)=>(
