@@ -96,14 +96,11 @@ const Home = () => {
 <div style={{flex:'1 0 8rem',display:'flex',justifyContent:'center',alignItems:'center'}}>
 <img style={{height:30,width:30,objectFit:'contain'}} src='https://cdn-icons-png.flaticon.com/128/814/814587.png' alt='world' />
 </div>
-<Link id='Footer_link' to='https://github.com/sivaprasath2004'>support</Link>
+<Link id='Footer_link' to='https://github.com/yamuna001/shopping-application'>support</Link>
 <Link id='Footer_link' to='/about'>About</Link>
 <Link id='Footer_link' to='/contact'>Contact</Link>
 <Link id='Footer_link' to='/book'>Book</Link>
 <Link id='Footer_link' to='/admin'>Admin</Link> 
-<div style={{flex:'1 0 8rem',display:'flex',justifyContent:'center',alignItems:'center'}}>
-<h6 >@copyright <Link to='https://github.com/sivaprasath2004'>Sivaprasath2004</Link></h6>
-</div>
 </div>
 </div>
     </div>

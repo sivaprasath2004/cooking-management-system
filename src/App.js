@@ -33,9 +33,6 @@ const App = () => {
       <div style={{flex:'1 0 10rem',display:'flex',justifyContent:'center',marginTop:'-5rem',alignItems:'center'}}>
         <img src={logo} alt='logo' style={{objectFit:'contain'}} />
       </div>
-      <h5 style={{color:'white',position:'absolute',padding:10,bottom:'0%'}}>@copyright 
-      <Link to='https://github.com/Sivaprasath2004'>
-       Sivaprasath2004</Link></h5>
       </div>
       
       </>

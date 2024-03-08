@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import Time from './Time'
 import './Booknow.css'
 import axios from 'axios'
@@ -8,8 +8,15 @@ import data from './assets/data'
 const Booknow = () => {
   let time=Time()
   const [detail,setDetails]=useState({Mark:'No', bookTime:time})
-  const [checker,setChecker]=useState({booking_loaded:false})
+  const [checker,setChecker]=useState({booking_loaded:false,onLoad:false})
   const [dishNames,setDishName]=useState([])
+  useEffect(()=>{
+    const cheifchecking=async()=>{
+        let res=await axios.get('https://cooking-management-system-backend.vercel.app/cheif')
+        setChecker(pre=>({...pre,booked_Cheif:res.data}))
+    }
+    cheifchecking()
+  },[checker.onLoad])
   async function booked(){
     if(detail.name===undefined ||detail.MobileNumber===undefined||detail.FunctionName===undefined||detail.Members===undefined||detail.Address===undefined){
         setDetails(pre=>({...pre,error:"Fill the form"}))
@@ -39,10 +46,23 @@ const Booknow = () => {
   }
     }
   }
+  useEffect(()=>{
+    let arr=[]
+if(detail.Bookdate){
+  if(checker.booked_Cheif){
+  let val=checker.booked_Cheif.find(item=>item.Bookdate===detail.Bookdate)
+  if(val){
+    setChecker(pre=>({...pre,image:undefined}))
+  }
+  arr.push(val)
+  setChecker(pre=>({...pre,booked_cheif:arr}))
+  }
+}
+  },[detail.Bookdate])
   function handle_close(){
     setDetails({Mark:'No', bookTime:time})
     setDishName([])
-    setChecker({booking_loaded:false})
+    setChecker({booking_loaded:false,onLoad:!checker.onLoad})
   }
   return (
     <>
@@ -119,11 +139,16 @@ const Booknow = () => {
           </>
       :<p>!! No More Cook Selected</p>}
       </div>
-      <div style={{display:'flex',flexWrap:'wrap',width:'90%',justifyContent:'center',alignItems:'center'}}>
+      <div style={{display:'flex',flexWrap:'wrap',width:'90%',justifyContent:'center',alignItems:'center',gap:10}}>
       {
         cheif.map((item,index)=>(
-     <img src={item.url} alt={`img_chiefs_bookPage_images${index}`} key={`images_tag_chief_bookpage${index}`} style={{width:100,height:100,objectFit:'contain',padding:3,border:checker.image===index?'1px solid black':'1px solid white'}} onClick={()=>setChecker(pre=>({...pre,image:index}))}/>
-        
+          <div key={`parentOfImage_tag${index}`} style={{width:100,height:100,position:'relative',padding:10,boxShadow:'0 -2px 5px rgba(0,0,0,0.5)'}}>
+     <img src={item.url} alt={`img_chiefs_bookPage_images${index}`} key={`images_tag_chief_bookpage${index}`} style={{width:'100%',height:'100%',objectFit:'contain',border: checker.booked_cheif!==undefined &&  checker.booked_cheif.find(item=>item?.Cheif===index)?'1px solid black':'1px solid white'}} onClick={()=>checker.booked_cheif?.find(item=>item?.Cheif===index)?console.log(" "):setChecker(pre=>({...pre,image:index}))}/>
+        {
+          checker.booked_cheif?.find(item=>item?.Cheif===index)?<div key={`outerOf_tag${index}`} style={{color:'red',position:'absolute',height:'100%',width:'100%',top:0,left:0,backdropFilter:'blur(3px)',cursor:'pointer',textAlign:'center',fontWeight:'900'}}>Already Booked</div>:<div key={`innerOf_tag${index}`}></div>
+        }
+        </div>
+     
         ))
       }
       </div>
