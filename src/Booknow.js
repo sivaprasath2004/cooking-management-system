@@ -47,15 +47,12 @@ const Booknow = () => {
     }
   }
   useEffect(()=>{
-    let arr=[]
 if(detail.Bookdate){
   if(checker.booked_Cheif){
-  let val=checker.booked_Cheif?.find(item=>item.Bookdate===detail.Bookdate)
-  if(val){
-    setChecker(pre=>({...pre,image:undefined}))
-  }
-  arr.push(val)
-  setChecker(pre=>({...pre,booked_cheif:arr}))
+  let val=checker.booked_Cheif?.filter(item=>item.Bookdate===detail.Bookdate)
+  let booking_cheif=val.map(item=>item.Cheif+1) 
+  const vals=booking_cheif.sort((x,y)=>x-y)
+  setChecker(pre=>({...pre,booked_cheif:vals,image:undefined}))
   }
 }
   },[detail.Bookdate])
@@ -143,10 +140,10 @@ if(detail.Bookdate){
       <div style={{display:'flex',flexWrap:'wrap',width:'90%',justifyContent:'center',alignItems:'center',gap:10}}>
       {
         cheif.map((item,index)=>(
-          <div key={`parentOfImage_tag${index}`} style={{width:100,height:100,position:'relative',padding:10,boxShadow:'0 1px 5px rgba(0,0,0,0.5)',border:checker.booked_cheif?.find(item=>item?.Cheif===index)?'2px solid red':checker.image===index?'2px solid green':'2px solid white',borderRadius:12,overflow:'hidden'}}>
-     <img src={item.url} alt={`img_chiefs_bookPage_images${index}`} key={`images_tag_chief_bookpage${index}`} style={{width:'100%',height:'100%',objectFit:'contain'}} onClick={()=>checker.booked_cheif?.find(item=>item?.Cheif===index)?console.log(" "):setChecker(pre=>({...pre,image:index}))}/>
+          <div key={`parentOfImage_tag${index}`} style={{width:100,height:100,position:'relative',padding:10,boxShadow:'0 1px 5px rgba(0,0,0,0.5)',border:checker.booked_cheif?.find(item=>item===index+1)?'2px solid red':checker.image===index?'2px solid green':'2px solid white',borderRadius:12,overflow:'hidden'}}>
+     <img src={item.url} alt={`img_chiefs_bookPage_images${index}`} key={`images_tag_chief_bookpage${index}`} style={{width:'100%',height:'100%',objectFit:'contain'}} onClick={()=>checker.booked_cheif?.find(item=>item===index+1)?null:setChecker(pre=>({...pre,image:index}))}/>
         {
-          checker.booked_cheif?.find(item=>item?.Cheif===index)?<div key={`outerOf_tag${index}`} style={{position:'absolute',height:'100%',width:'100%',top:0,left:0,backdropFilter:'blur(3px)',cursor:'pointer',fontWeight:'900',display:'flex',justifyContent:'center',alignItems:'center'}}>
+          checker.booked_cheif?.find(item=>item===index+1)?<div key={`outerOf_tag${index}`} style={{position:'absolute',height:'100%',width:'100%',top:0,left:0,backdropFilter:'blur(3px)',cursor:'pointer',fontWeight:'900',display:'flex',justifyContent:'center',alignItems:'center'}}>
             <p key={`already_booked's${index}`} style={{height:'70%',width:'70%',display:'flex',justifyContent:'center',alignItems:'center',color:'black',fontSize:'larger',fontWeight:'900',backgroundColor:'rgba(255 0 0 / 48%)',borderRadius:'100%',boxShadow:'0 4px 15px rgb(255 0 0)'}}>Booked</p></div>:<div key={`innerOf_tag${index}`}></div>
         }
         </div>
