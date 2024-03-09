@@ -8,7 +8,7 @@ import data from './assets/data'
 const Booknow = () => {
   let time=Time()
   const [detail,setDetails]=useState({Mark:'No', bookTime:time})
-  const [checker,setChecker]=useState({booking_loaded:false,onLoad:false})
+  const [checker,setChecker]=useState({booking_loaded:false,onLoad:false,cheif_Prize:0,dish_prize:[]})
   const [dishNames,setDishName]=useState([])
   useEffect(()=>{
     const cheifchecking=async()=>{
@@ -61,13 +61,16 @@ if(detail.Bookdate){
     setDishName([])
     setChecker({booking_loaded:false,onLoad:!checker.onLoad})
   }
+  function handle_dish(item){
+    setDishName([...dishNames, {name:item.heading,prize:item.prize}])
+  }
   return (
     <>
      {
       !checker.booking_loaded?<>
     <div className='golden_chief'>
     <h1 id='headings'>Guarantee & <span>Certified</span></h1>
-     <div>
+     <div id='div'>
       <div id='content'>
      <p>We assure you a flawlessly catered function with an unwavering guarantee and a steadfast commitment to maintaining the highest standards in food taste. Your event is our priority, and we stand by our promise of uncompromised excellence in both service and culinary delights. Trust us to elevate your occasion with delectable dishes, leaving a lasting impression on the taste buds of your guests.</p>
      </div>
@@ -132,7 +135,7 @@ if(detail.Bookdate){
         <img src={cheif[checker.image].url} alt={cheif[checker.image].name+'chief'} key={cheif[checker.image].name} style={{flex:'1 0 8rem',height:150,width:150,objectFit:'contain'}} />
         <div key='cheifImage_container' style={{flex:'1 0 8rem',padding:10,display:'flex',justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'column'}}>
           <p >{`Name:${cheif[checker.image].name}`}</p>
-          <p>{`Prize:${cheif[checker.image].prize}`}</p>
+          <p>{`Prize:${cheif[checker.image].prize}/day`}</p>
           <p >{`Exp:${cheif[checker.image].experience}`}</p> </div>
           </>
       :<p>!! No More Cook Selected</p>}
@@ -141,7 +144,7 @@ if(detail.Bookdate){
       {
         cheif.map((item,index)=>(
           <div key={`parentOfImage_tag${index}`} style={{width:100,height:100,position:'relative',padding:10,boxShadow:'0 1px 5px rgba(0,0,0,0.5)',border:checker.booked_cheif?.find(item=>item===index+1)?'2px solid red':checker.image===index?'2px solid green':'2px solid white',borderRadius:12,overflow:'hidden'}}>
-     <img src={item.url} alt={`img_chiefs_bookPage_images${index}`} key={`images_tag_chief_bookpage${index}`} style={{width:'100%',height:'100%',objectFit:'contain'}} onClick={()=>checker.booked_cheif?.find(item=>item===index+1)?null:setChecker(pre=>({...pre,image:index}))}/>
+     <img src={item.url} alt={`img_chiefs_bookPage_images${index}`} key={`images_tag_chief_bookpage${index}`} style={{width:'100%',height:'100%',objectFit:'contain'}} onClick={()=>checker.booked_cheif?.find(item=>item===index+1)?null:setChecker(pre=>({...pre,image:index,cheif_Prize:item.prize}))}/>
         {
           checker.booked_cheif?.find(item=>item===index+1)?<div key={`outerOf_tag${index}`} style={{position:'absolute',height:'100%',width:'100%',top:0,left:0,backdropFilter:'blur(3px)',cursor:'pointer',fontWeight:'900',display:'flex',justifyContent:'center',alignItems:'center'}}>
             <p key={`already_booked's${index}`} style={{height:'70%',width:'70%',display:'flex',justifyContent:'center',alignItems:'center',color:'black',fontSize:'larger',fontWeight:'900',backgroundColor:'rgba(255 0 0 / 48%)',borderRadius:'100%',boxShadow:'0 4px 15px rgb(255 0 0)'}}>Booked</p></div>:<div key={`innerOf_tag${index}`}></div>
@@ -152,15 +155,19 @@ if(detail.Bookdate){
       }
       </div>
       <h2 style={{fontSize:18,fontWeight:'600'}}>Select Your Dish</h2>
-      <div style={{width:'80%',backgroundColor:'white',borderRadius:10,boxShadow:'0 6px 6px rgba(0,0,0,0.5)',border:'1px solid black',gap:'0.5rem'}}>
+      <div style={{width:'80%',backgroundColor:'white',borderRadius:10,boxShadow:'0 6px 6px rgba(0,0,0,0.5)',border:'1px solid black',gap:'0.5rem',display:'flex',flexDirection:'column',padding:10}}>
       {dishNames.length===0?
       <p>No more Dishes Selected
       </p>:
       dishNames.map((item,index)=>(
-        <div style={{display:'flex',flexDirection:'row',marginLeft:10,justifyContent:'flex-start',alignItems:'flex-start',gap:'1rem'}}>
-        <p key={`dishNames_Sno_${index}`}>{index+1}</p>
-        <p key={`dishNames_name_${index}`}>{item}</p>
-        </div>
+        <div style={{display:'flex',flexDirection:'row',width:'100%'}}
+        key={`parentOfFood_Receipe${index}`}>
+        <div key={`parent_DISh${index}`} style={{gap:15,width:'60%',display:'flex',justifyContent:'flex-start'}}><p key={`dishNames_Sno_${index}`}>{index+1}</p>
+        <p key={`dishNames_name_${index}`}>{item.name}</p></div>
+        <div key={`item_prize_and_cancel_${index}`} style={{display:'flex',width:'40%',justifyContent:'space-evenly',flexDirection:'row',alignItems:'center'}}>
+        <p key={`prize_s_${index}`}>{`₹${item.prize}`}</p>
+        <img src='https://cdn-icons-png.flaticon.com/128/2732/2732657.png' alt='close' style={{height:20,width:20}} key={`close${index}`} onClick={()=>setDishName(dishNames.filter(ele=>ele.name!==item.name))} />
+        </div></div>
       ))}
       </div>
       <div style={{display:'flex',flexWrap:'wrap',width:'90%',justifyContent:'center',alignItems:'center',gap:'1rem'}}>
@@ -168,7 +175,7 @@ if(detail.Bookdate){
         data.breakfast.map((item,index)=>(
           <div key={`breakfast_item_container${index}`} style={{display:'flex',flexDirection:'column',flex:'1 0 8rem'}}>
           <img src={item.url} alt={`img_breakfast_dis${index}`} key={`images_tag_breakfast_food_book${index}`} style={{width:100,height:100,objectFit:'contain',padding:3}} />
-          {dishNames.includes(item.heading) ? <button key={`Breakfast_order_button${index}`} id='Order_buttons_Book_page' style={{backgroundColor:'white',color:'black',fontWeight:'600'}}>✓ Added</button> : <button key={`Breakfast_order_button${index}`} id='Order_buttons_Book_page' onClick={()=>setDishName([...dishNames, item.heading])}>Add</button>}
+          {dishNames.find(ele=>ele.name===item.heading)  ? <button key={`Breakfast_order_button${index}`} id='Order_buttons_Book_page' style={{backgroundColor:'white',color:'black',fontWeight:'600'}}>✓ Added</button> : <button key={`Breakfast_order_button${index}`} id='Order_buttons_Book_page' onClick={()=>handle_dish(item)}>Add</button>}
           </div>
         ))
        }
@@ -176,7 +183,7 @@ if(detail.Bookdate){
         data.lunch.map((item,index)=>(
         <div key={`lunch_item_container${index}`} style={{display:'flex',flexDirection:'column',flex:'1 0 8rem'}}>
           <img src={item.url} alt={`img_lunch_dish${index+4}`} key={`images_tag_lunch_food_book${index+4}`} style={{width:100,height:100,objectFit:'contain',padding:3}} />
-          {dishNames.includes(item.heading) ?<button key={`Lunch_order_button${index}`} id='Order_buttons_Book_page' style={{backgroundColor:'white',color:'black',fontWeight:'600'}}>✓ Added</button>: <button key={`Lunch_order_button${index}`} id='Order_buttons_Book_page' onClick={()=>setDishName([...dishNames, item.heading])}>Add</button>}
+          {dishNames.find(ele=>ele.name===item.heading) ?<button key={`Lunch_order_button${index}`} id='Order_buttons_Book_page' style={{backgroundColor:'white',color:'black',fontWeight:'600'}}>✓ Added</button>: <button key={`Lunch_order_button${index}`} id='Order_buttons_Book_page' onClick={()=>handle_dish(item)}>Add</button>}
           </div>
         ))
        }
@@ -184,9 +191,9 @@ if(detail.Bookdate){
         data.dinner.map((item,index)=>(
           <div key={`dinner_Item_container${index}`} style={{display:'flex',flexDirection:'column',flex:'1 0 8rem'}}>
           <img src={item.url} alt={`img_dinner_dish${index+8}`} key={`images_tag_dinner_food_book${index+8}`} style={{width:100,height:100,objectFit:'contain',padding:3}} />
-          {dishNames.includes(item.heading) ? 
+          {dishNames.find(ele=>ele.name===item.heading) ? 
           <button key={`Dinner_order_button${index}`} id='Order_buttons_Book_page' style={{backgroundColor:'white',color:'black',fontWeight:'600'}}>✓ Added</button>:
-          <button key={`Dinner_order_button${index}`} id='Order_buttons_Book_page' onClick={()=>setDishName([...dishNames, item.heading])}>Add</button>}
+          <button key={`Dinner_order_button${index}`} id='Order_buttons_Book_page' onClick={()=>handle_dish(item)}>Add</button>}
           </div>
         ))
        }
@@ -194,6 +201,7 @@ if(detail.Bookdate){
       </div>
   <div style={{display:'flex',flexDirection:'column',paddingTop:10}}>
     <h3 style={{color:detail.error===undefined?'white':'red'}}>{detail.error===undefined?"No error":detail.error}</h3>
+<h3 id='packages'>{`prize:₹${checker.cheif_Prize+dishNames.reduce((acc,dish)=>acc + Number(dish.prize), 0)}`}</h3>
 <button className="button-50" onClick={()=>booked()}>Book</button>
 </div>
      </div> 

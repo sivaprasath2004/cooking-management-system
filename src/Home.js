@@ -52,7 +52,7 @@ const Home = () => {
        <div key={`parent_tag_${item}${index}`}>
         <img key={`its_img${item}${index}`} src={item.url} alt={item.alt} />
         <h2 id='packageName' key={`its_name${item}${index}`} style={{textAlign:'center'}}>{item.heading}</h2>
-        <p id='packageName' key={`its_prize${item}${index}`} style={{fontSize:14}}>{item.prize}</p>
+        <p id='packageName' key={`its_prize${item}${index}`} style={{fontSize:14}}>{`₹${item.prize}`}</p>
        </div>
 ))}
 </div></div>

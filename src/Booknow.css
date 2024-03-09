@@ -12,7 +12,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    width: 100%;
+    
     align-items: center;
 }
 #Order_buttons_Book_page{
