@@ -27,9 +27,10 @@ const Booknow = () => {
       if(
         detail.name.length>=3 &&  detail.MobileNumber.length===10 && detail.FunctionName.length>=3 && detail.Members.length>=1 && detail.Address.length>=4){
           setChecker(pre=>({...pre,booking_loaded:true}))
+        let dish=dishNames.map(item=>item.name)
           await axios.post('https://cooking-management-system-backend.vercel.app/details',{
         detail:detail,
-        dish:dishNames,
+        dish:dish,
         cheif:checker.image===undefined?'No more cook selected':checker.image
       })
     }
