@@ -163,9 +163,9 @@ if(detail.Bookdate){
       dishNames.map((item,index)=>(
         <div style={{display:'flex',flexDirection:'row',width:'100%'}}
         key={`parentOfFood_Receipe${index}`}>
-        <div key={`parent_DISh${index}`} style={{gap:15,width:'60%',display:'flex',justifyContent:'flex-start'}}><p key={`dishNames_Sno_${index}`}>{index+1}</p>
+        <div key={`parent_DISh${index}`} style={{gap:15,width:'70%',display:'flex',justifyContent:'flex-start'}}><p key={`dishNames_Sno_${index}`}>{index+1}</p>
         <p key={`dishNames_name_${index}`}>{item.name}</p></div>
-        <div key={`item_prize_and_cancel_${index}`} style={{display:'flex',width:'40%',justifyContent:'space-evenly',flexDirection:'row',alignItems:'center'}}>
+        <div key={`item_prize_and_cancel_${index}`} style={{display:'flex',width:'30%',justifyContent:'space-evenly',flexDirection:'row',alignItems:'center'}}>
         <p key={`prize_s_${index}`}>{`₹${item.prize}`}</p>
         <img src='https://cdn-icons-png.flaticon.com/128/2732/2732657.png' alt='close' style={{height:20,width:20}} key={`close${index}`} onClick={()=>setDishName(dishNames.filter(ele=>ele.name!==item.name))} />
         </div></div>
